@@ -28,7 +28,7 @@ class UsernameGenerator
 		if @names
 			updateArrayDatabase
 		elsif @hashed_names
-			updateHashDatabase
+			# TODO: updateHashDatabase
 		end
 	end
 
@@ -76,13 +76,6 @@ class UsernameGenerator
 				key = name.split(/\d*\z/)
 				value = name.match(/\d*\z/)[0] # MatchData
 				names[key] = value
-				#puts value if key == "john"
-				#if names.has_key?(key)
-				#	names[key] << value
-				#else
-				#	names[key] = [value]
-				#end
-
 			end
 		end
 
@@ -102,13 +95,6 @@ class UsernameGenerator
 	end
 
 	def updateHashDatabase
-		file = File.open('usernames.txt', 'a+')
-
-		((@db_count + 1)..@hashed_names.size).each do |index|
-			file.write("\n#{@hashed_names[index]}")
-		end
-
-		file.close
-		@db_count = @hashed_names.size
+		# TODO
 	end
 end
